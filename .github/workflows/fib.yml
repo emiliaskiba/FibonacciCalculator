@@ -46,7 +46,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            ghcr.io/emiliaskiba/FibCalc
+            ghcr.io/emiliaskiba/fibcalc
           tags: |
             type=ref,event=branch
             type=semver,pattern={{version}}
@@ -56,8 +56,8 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v3
         with:
-          cache-from: type=registry,ref=docker.io/emiliaskiba/FibCalc:cache
-          cache-to: type=registry,ref=docker.io/emiliaskiba/FibCalc:cache
+          cache-from: type=registry,ref=docker.io/emiliaskiba/fibcalc:cache
+          cache-to: type=registry,ref=docker.io/emiliaskiba/fibcalc:cache
           platforms: linux/arm64,linux/amd64
           context: ./
           push: true
